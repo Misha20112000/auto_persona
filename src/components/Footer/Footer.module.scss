@@ -1,0 +1,11 @@
+.footerWrapper {
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: 60px;
+
+  .footer {
+    padding: 45px 15px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+  }
+}

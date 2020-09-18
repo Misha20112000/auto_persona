@@ -1,0 +1,18 @@
+.footerContacts {
+  width: 45%;
+
+  .socNet {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+
+    span {
+      margin-right: 10px;
+
+      &:first-child {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+//font-family: 'Montserrat', sans-serif; 500, 700
+//font-family: 'Roboto', sans-serif; 400
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+body {
+  color: #D1D1D1;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+span {
+  display: inline-block;
+}
+
+input, button {
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}

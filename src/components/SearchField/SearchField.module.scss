@@ -1,0 +1,26 @@
+.searchField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  max-width: 600px;
+
+  input {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  button {
+    margin-left: 15px;
+    background: #FFC124;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #0F117A;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+}

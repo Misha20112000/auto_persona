@@ -1,0 +1,14 @@
+.settings {
+  display: flex;
+  align-items: center;
+
+  span {
+    &:first-child {
+      color: #f6dd3d;
+    }
+  }
+
+  .slider {
+    margin-left: 20px;
+  }
+}

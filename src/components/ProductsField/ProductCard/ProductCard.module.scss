@@ -1,0 +1,18 @@
+.productCardWrapper {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+
+  .productCard {
+    width: 90%;
+    background: #1A1A1A;
+    height: 560px;
+    border-radius: 3px;
+
+    .bgImg {
+      background: url(../../../assets/img/goldSkull.jpg) center center no-repeat;
+      background-size: cover;
+      height: 200px;
+    }
+  }
+}

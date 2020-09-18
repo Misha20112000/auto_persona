@@ -1,0 +1,26 @@
+.menu {
+  li {
+    margin-right: 40px;
+    overflow: hidden;
+
+    a {
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #f6dd3d;
+        transform: translateX(-100%);
+        transition: 0.2s ease;
+      }
+    }
+
+    a.active {
+      color: #f6dd3d;
+
+      &:after {
+        transform: translateX(0);
+      }
+    }
+  }
+}
