@@ -4,15 +4,98 @@
   justify-content: center;
 
   .productCard {
+    position: relative;
     width: 90%;
     background: #1A1A1A;
-    height: 560px;
     border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    .basket {
+      position: absolute;
+      width: 30px;
+      top: 52%;
+      right: 20px;
+      cursor: pointer;
+    }
 
     .bgImg {
       background: url(../../../assets/img/goldSkull.jpg) center center no-repeat;
       background-size: cover;
       height: 200px;
+      position: relative;
+
+      .action {
+        background: #c61616;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 3px 0;
+      }
+    }
+
+    .cardContent {
+      padding: 15px;
+
+      .name {
+        height: 85px;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        line-height: 17px;
+      }
+
+      .stars {
+
+      }
+
+      .comment {
+        color: #7072FF;
+        margin: 10px 0;
+        cursor: pointer;
+        display: inline-block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .availability {
+        font-size: 16px;
+        color: #17B978;
+        margin-bottom: 10px;
+      }
+
+      .producer {
+        margin-bottom: 10px;
+      }
+
+      .id {
+        margin-bottom: 40px;
+      }
+
+      .price {
+        text-align: center;
+        font-size: 30px;
+        color: #296B4D;
+
+        span {
+          font-size: 16px;
+          color: #D1D1D1;
+        }
+      }
+
+      a {
+        background: #FFC124;
+        padding: 8px 25px;
+        border-radius: 5px;
+        color: #0F117A;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 10px 0 5px 0;
+      }
     }
   }
 }

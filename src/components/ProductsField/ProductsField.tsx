@@ -5,7 +5,11 @@ import styles from './ProductsField.module.scss';
 //my components
 import {ProductCard} from './ProductCard/ProductCard';
 
-export const ProductsField = () => {
+interface IPropsTypes {
+    productsData: Array<object>
+}
+
+export const ProductsField:React.FC<IPropsTypes> = ({productsData}) => {
     return (
         <div className={`${styles.productsFiled} container`}>
             <ProductCard/>

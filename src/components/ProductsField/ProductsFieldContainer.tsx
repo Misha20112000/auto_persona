@@ -1,9 +1,14 @@
 //other import
 import React, {useEffect} from 'react';
-import {withRouter} from 'react-router-dom';
-import axios from 'axios';
+import {withRouter, RouteComponentProps} from 'react-router-dom';
+import {connect} from 'react-redux';
+//import axios from 'axios';
 //my components
 import {ProductsField} from './ProductsField';
+//my func
+import {setProducts} from '../../redux/productsReducer';
+//types
+import {AppStateType} from '../../redux/store';
 
 interface IPropsTypes {
     match: {
@@ -14,18 +19,29 @@ interface IPropsTypes {
             category: string
         }
     }
+    setProducts: (productsData: Array<object>) => void
+    productsData: Array<object>
 }
 
-const ProductsFieldContainer: React.FC<IPropsTypes> = ({match}) => {
+const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({match, setProducts, productsData}) => {
 
     useEffect(() => {
-        // axios.get('http://...').then(response => {
-        //     setProducts(response.data);
-        // });
+        //axios.get('http://').then(response => {
+        //  setProducts(response.data);
+        //});
+        setProducts([
+            {}, {}
+        ]);
     }, [match.params.category]);
 
-    return <ProductsField/>
+    return <ProductsField productsData={productsData}/>
 };
 
-export default withRouter(ProductsFieldContainer);
+const mapStateToProps = (state: AppStateType) => {
+    return {
+        productsData: state.productsReducer.productsData,
+    }
+};
+
+export default connect(mapStateToProps, {setProducts})(withRouter(ProductsFieldContainer));
 
