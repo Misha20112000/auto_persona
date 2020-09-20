@@ -17,4 +17,4 @@ export const productsReducer = (state = initialState, action: any) => {
 //AT
 const SET_PRODUCTS = 'SET_PRODUCTS';
 //AC
-export const setProducts = (productsData: any) => ({type: SET_PRODUCTS, productsData});
+export const setProducts = (productsData: Array<object>) => ({type: SET_PRODUCTS, productsData});

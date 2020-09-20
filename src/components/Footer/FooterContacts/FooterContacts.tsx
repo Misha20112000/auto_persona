@@ -1,12 +1,12 @@
 //other import
 import React from 'react';
 //images
-import viber from './../../../assets/img/viber.svg';
-import facebook from './../../../assets/img/facebook.svg';
-import instagram from './../../../assets/img/instagram.svg';
-import telegram from './../../../assets/img/telegram.svg';
-import whatsApp from './../../../assets/img/whatsApp.svg';
-import copyright from './../../../assets/img/copyright.svg';
+import viber from '../../../assets/img/socialNetworkImg/viber.svg';
+import facebook from '../../../assets/img/socialNetworkImg/facebook.svg';
+import instagram from '../../../assets/img/socialNetworkImg/instagram.svg';
+import telegram from '../../../assets/img/socialNetworkImg/telegram.svg';
+import whatsApp from '../../../assets/img/socialNetworkImg/whatsApp.svg';
+import copyright from '../../../assets/img/smallIcons/copyright.svg';
 //styles
 import styles from './FooterContacts.module.scss';
 //my components
