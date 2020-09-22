@@ -16,7 +16,8 @@ const GBO_kitsData = [
     {
         name: 'Коромисло другої ступені редуктора Atiker VR01, VR02, Коромисло другої ступені редуктора Atiker VR01, VR02',
         condition: 'action',
-        rating: 1,
+        rating: 3,
+        wantToBuy: 1,
         imgs: [mainImg],
         comments: ['good GBO product (1)'],
         amount: 19,
@@ -28,7 +29,8 @@ const GBO_kitsData = [
     {
         name: 'GBO product 2',
         condition: '',
-        rating: 2,
+        rating: 4,
+        wantToBuy: 1,
         imgs: [mainImg],
         comments: ['good GBO product (2)'],
         amount: 819,
@@ -37,36 +39,39 @@ const GBO_kitsData = [
         price: 14,
         specialCharacteristics: {}
     },
-    // {
-    //     name: 'GBO product 3',
-    //     condition: 'action',
-    //     rating: 3,
-    //     inBasket: false,
-    //     comments: ['good GBO product (3)'],
-    //     amount: 0,
-    //     producer: 'producer 3',
-    //     id: '1608-2431-7515',
-    //     price: 27,
-    //     specialCharacteristics: {}
-    // },
-    // {
-    //     name: 'GBO product 4',
-    //     condition: '',
-    //     rating: 4,
-    //     inBasket: false,
-    //     comments: ['good GBO product (4)'],
-    //     amount: 45,
-    //     producer: 'producer 4',
-    //     id: '9928-8931-7669',
-    //     price: 76,
-    //     specialCharacteristics: {}
-    // },
+    {
+        name: 'GBO product 3',
+        condition: 'action',
+        rating: 3,
+        wantToBuy: 1,
+        imgs: [mainImg],
+        comments: ['good GBO product (3)'],
+        amount: 0,
+        producer: 'producer 3',
+        id: '1608-2431-7515',
+        price: 27,
+        specialCharacteristics: {}
+    },
+    {
+        name: 'GBO product 4',
+        condition: '',
+        rating: 4,
+        wantToBuy: 1,
+        imgs: [mainImg],
+        comments: ['good GBO product (4)'],
+        amount: 45,
+        producer: 'producer 4',
+        id: '9928-8931-7669',
+        price: 76,
+        specialCharacteristics: {}
+    },
 ];
 
 interface IProductObject {
     name: string
     condition: string
     rating: number
+    wantToBuy: number
     inBasket: boolean
     imgs: Array<string>
     comments: Array<string>
@@ -91,7 +96,6 @@ interface IPropsTypes {
 }
 
 const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({match, setProducts, productsData}) => {
-
     useEffect(() => {
         //axios.get('http://').then(response => {
         //  setProducts(response.data);

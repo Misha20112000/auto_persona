@@ -16,6 +16,7 @@ interface IPropsTypes {
     name: string
     condition: string
     rating: number
+    wantToBuy: number
     inBasket: boolean
     imgs: Array<string>
     comments: Array<string>
@@ -24,18 +25,14 @@ interface IPropsTypes {
     id: string
     price: number
     specialCharacteristics: object
-    toggleToBasket: (name: string, condition: string, rating: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    toggleToBasket: (name: string, condition: string, rating: number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
     cardStyle: number
+    plus: (id: string) => void
+    minus: (id: string) => void
 }
 
-export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, imgs, comments, amount, producer, id, price, specialCharacteristics, toggleToBasket, cardStyle}) => {
+export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wantToBuy, imgs, comments, amount, producer, id, price, specialCharacteristics, toggleToBasket, cardStyle, plus, minus}) => {
     let stylesIf;
-    if (cardStyle === 1) {
-        stylesIf = styles1;
-    } else {
-        stylesIf = styles2;
-    }
-
     switch (cardStyle) {
         case 2: {
             stylesIf = styles2;
@@ -46,8 +43,32 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, img
     }
 
     const toggleProductToBasket = () => {
-        toggleToBasket(name, condition, rating, imgs, comments, amount, producer, id, price, specialCharacteristics)
+        toggleToBasket(name, condition, rating, wantToBuy, imgs, comments, amount, producer, id, price, specialCharacteristics)
     };
+
+    const starsArray = [];
+
+    for (let i = 0; i < rating; i++) {
+        starsArray.push(i);
+    }
+
+    const startArrayAfterMap = starsArray.map(number => <img key={number} src={star} alt=""/>)
+
+    const plusProduct = () => {
+        if (wantToBuy < amount) {
+            plus(id);
+        } else {
+            alert('Неможлива операція.')
+        }
+    };
+
+    const minusProduct = () => {
+        if (wantToBuy > 1) {
+            minus(id);
+        } else {
+            alert('Неможлива операція.')
+        }
+    }
 
     return (
         <div className={stylesIf.productCardWrapper}>
@@ -59,15 +80,15 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, img
                 <div className={stylesIf.buyZone}>
                     <div className={stylesIf.amount}>
                         <p className={stylesIf.title}>Кількість</p>
-                        <span className={stylesIf.minus}></span>
-                        <span>1</span>
-                        <span className={stylesIf.plus}></span>
+                        <span onClick={minusProduct} className={stylesIf.minus}> </span>
+                        <span>{wantToBuy}</span>
+                        <span onClick={plusProduct} className={stylesIf.plus}> </span>
                     </div>
                     <div className={stylesIf.price}>
                         {price}<span>грн</span>
                     </div>
                     <div className={stylesIf.totalPrice}>
-                        Вартість за 1шт. - 10190грн
+                        Вартість за {wantToBuy}шт. - {price * wantToBuy}грн
                     </div>
                 </div>
                 <div style={{backgroundImage: `url(${imgs[0]})`}} className={stylesIf.bgImg}>
@@ -76,11 +97,16 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, img
                 <div className={stylesIf.cardContent}>
                     <div className={stylesIf.name}>{name}</div>
                     <div className={stylesIf.stars}>
-                        <img src={star} alt=""/>
-                        <img src={star} alt=""/>
-                        <img src={star} alt=""/>
-                        <img src={star} alt=""/>
-                        <img src={emptyStar} alt=""/>
+                        <div className={stylesIf.emptyStars}>
+                            <img src={emptyStar} alt=""/>
+                            <img src={emptyStar} alt=""/>
+                            <img src={emptyStar} alt=""/>
+                            <img src={emptyStar} alt=""/>
+                            <img src={emptyStar} alt=""/>
+                        </div>
+                        <div className={stylesIf.fullStars}>
+                            {startArrayAfterMap}
+                        </div>
                     </div>
                     <div className={stylesIf.comment}>Залишити відгук</div>
                     {amount ? <div className={stylesIf.inStock}>В наявності {amount} шт.</div> :

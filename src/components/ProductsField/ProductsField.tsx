@@ -14,6 +14,7 @@ interface IProductObject {
     name: string
     condition: string
     rating: number
+    wantToBuy: number
     inBasket: boolean
     imgs: Array<string>
     comments: Array<string>
@@ -27,7 +28,7 @@ interface IProductObject {
 interface IPropsTypes {
     productsData: Array<IProductObject>
     basketData: any
-    toggleToBasket: (name :string, condition: string, rating :number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    toggleToBasket: (name :string, condition: string, rating :number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
 }
 
 const ProductsField: React.FC<IPropsTypes> = ({productsData, basketData, toggleToBasket}) => {

@@ -69,7 +69,12 @@
       }
 
       .stars {
+        position: relative;
 
+        .fullStars {
+          position: absolute;
+          top: 0;
+        }
       }
 
       .comment {

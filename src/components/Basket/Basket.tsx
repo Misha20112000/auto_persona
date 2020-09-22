@@ -10,6 +10,7 @@ interface IProduct {
     name: string
     condition: string
     rating: number
+    wantToBuy: number
     inBasket: boolean
     imgs: Array<string>
     comments: Array<string>
@@ -22,12 +23,18 @@ interface IProduct {
 
 interface IPropsTypes {
     basketData: Array<IProduct>
-    toggleToBasket: (name: string, condition: string, rating: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    toggleToBasket: (name: string, condition: string, rating: number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    plus: (id: string) => void
+    minus: (id: string) => void
 }
 
-export const Basket: React.FC<IPropsTypes> = ({basketData, toggleToBasket}) => {
+export const Basket: React.FC<IPropsTypes> = ({basketData, toggleToBasket, plus, minus}) => {
 
-    const basketDataAfterMap = basketData.map(product => <ProductCard cardStyle={2} key={product.id} {...product}
+    const basketDataAfterMap = basketData.map(product => <ProductCard cardStyle={2}
+                                                                      key={product.id}
+                                                                      {...product}
+                                                                      minus={minus}
+                                                                      plus={plus}
                                                                       toggleToBasket={toggleToBasket}/>)
 
     return (
