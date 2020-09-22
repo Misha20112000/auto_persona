@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 //images
 import mainImg from './../../assets/img/other/goldSkull.jpg';
 //my components
-import {ProductsField} from './ProductsField';
+import ProductsField from './ProductsField';
 //my func
 import {setProducts} from '../../redux/productsReducer';
 //types
@@ -14,23 +14,21 @@ import {AppStateType} from '../../redux/store';
 
 const GBO_kitsData = [
     {
-        name: 'GBO product 1',
+        name: 'Коромисло другої ступені редуктора Atiker VR01, VR02, Коромисло другої ступені редуктора Atiker VR01, VR02',
         condition: 'action',
         rating: 1,
-        inBasket: false,
         imgs: [mainImg],
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
         id: '1028-2931-7219',
-        price: 294,
+        price: 10190,
         specialCharacteristics: {}
     },
     {
         name: 'GBO product 2',
         condition: '',
         rating: 2,
-        inBasket: false,
         imgs: [mainImg],
         comments: ['good GBO product (2)'],
         amount: 819,
@@ -104,9 +102,10 @@ const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({ma
                 break;
             }
             case 'injection_systems': {
-                setProducts([{}]);
+                setProducts([]);
                 break;
             }
+            default: setProducts([{}]);
         }
     }, [match.params.category]);
 

@@ -10,7 +10,7 @@ export const Menu = () => {
         <nav className={styles.menu}>
             <ul>
                 <li><NavLink activeClassName={styles.active} to='/home'>Головна</NavLink></li>
-                <li><NavLink activeClassName={styles.active} to='/payment&delivery'>Оплата і доставка</NavLink></li>
+                <li><NavLink activeClassName={styles.active} to='/basket'>Корзина</NavLink></li>
                 <li><NavLink activeClassName={styles.active} to='/HBO_manufacturers'>Виробники ГБО</NavLink></li>
                 <li><NavLink activeClassName={styles.active} to='/contacts'>Контакти</NavLink></li>
             </ul>

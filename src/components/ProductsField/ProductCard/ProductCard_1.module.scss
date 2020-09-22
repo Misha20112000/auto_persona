@@ -11,12 +11,32 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 30px;
 
+    &:after {
+      content: 'Кількість товару можна збільшити в корзині.';
+      position: absolute;
+      text-align: center;
+      bottom: 2px;
+      left: 10px;
+      right: 10px;
+      line-height: 16px;
+      opacity: 0.3;
+      font-size: 14px;
+    }
+
     .basket {
       position: absolute;
       width: 30px;
       top: 52%;
       right: 20px;
       cursor: pointer;
+    }
+
+    .dagger {
+      display: none;
+    }
+
+    .buyZone {
+      display: none;
     }
 
     .bgImg {
@@ -38,7 +58,7 @@
     }
 
     .cardContent {
-      padding: 15px;
+      padding: 15px 15px 30px 15px;
 
       .name {
         height: 85px;
@@ -80,10 +100,16 @@
       }
 
       .id {
-        margin-bottom: 40px;
+        margin-bottom: 10px;
+      }
+
+      .moreDetail {
+        color: blueviolet;
+        font-size: 20px;
       }
 
       .price {
+        margin-top: 40px;
         text-align: center;
         font-size: 30px;
         color: #296B4D;
@@ -95,14 +121,16 @@
       }
 
       a {
-        background: #FFC124;
-        padding: 8px 25px;
-        border-radius: 5px;
-        color: #0F117A;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 10px 0 5px 0;
+        &:last-child {
+          background: #FFC124;
+          padding: 8px 25px;
+          border-radius: 5px;
+          color: #0F117A;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          margin: 10px 0 5px 0;
+        }
       }
     }
   }
