@@ -9,6 +9,7 @@ import mainImg from './../../assets/img/other/goldSkull.jpg';
 import ProductsField from './ProductsField';
 //my func
 import {setProducts} from '../../redux/productsReducer';
+import {setMoreDetailData} from '../../redux/moreDetailReducer';
 //types
 import {AppStateType} from '../../redux/store';
 
@@ -92,10 +93,11 @@ interface IPropsTypes {
         }
     }
     setProducts: (productsData: Array<object>) => void
+    setMoreDetailData: (product: any) => void
     productsData: Array<IProductObject>
 }
 
-const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({match, setProducts, productsData}) => {
+const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({match, setProducts, productsData, setMoreDetailData}) => {
     useEffect(() => {
         //axios.get('http://').then(response => {
         //  setProducts(response.data);
@@ -109,11 +111,12 @@ const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({ma
                 setProducts([]);
                 break;
             }
-            default: setProducts([{}]);
+            default:
+                setProducts([{}]);
         }
     }, [match.params.category]);
 
-    return <ProductsField productsData={productsData}/>
+    return <ProductsField productsData={productsData} setMoreDetailData={setMoreDetailData}/>
 };
 
 const mapStateToProps = (state: AppStateType) => {
@@ -122,5 +125,5 @@ const mapStateToProps = (state: AppStateType) => {
     }
 };
 
-export default connect(mapStateToProps, {setProducts})(withRouter(ProductsFieldContainer));
+export default connect(mapStateToProps, {setProducts, setMoreDetailData})(withRouter(ProductsFieldContainer));
 

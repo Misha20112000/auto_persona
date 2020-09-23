@@ -1,5 +1,6 @@
 const initialState = {
-    productsData: []
+    productsData: [],
+    activeTab: 1
 };
 
 export const productsReducer = (state = initialState, action: any) => {
@@ -9,6 +10,11 @@ export const productsReducer = (state = initialState, action: any) => {
                 ...state, productsData: action.productsData
             }
         }
+        case CHANGE_ACTIVE_TAB: {
+            return {
+                ...state, activeTab: action.activeTab
+            }
+        }
         default:
             return state;
     }
@@ -16,5 +22,7 @@ export const productsReducer = (state = initialState, action: any) => {
 
 //AT
 const SET_PRODUCTS = 'SET_PRODUCTS';
+const CHANGE_ACTIVE_TAB = 'CHANGE_ACTIVE_TAB';
 //AC
 export const setProducts = (productsData: Array<object>) => ({type: SET_PRODUCTS, productsData});
+export const changeActiveTab = (activeTab: number) => ({type: CHANGE_ACTIVE_TAB, activeTab});

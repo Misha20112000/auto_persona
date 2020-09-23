@@ -12,10 +12,10 @@
     margin-bottom: 30px;
 
     &:after {
-      content: 'Кількість товару можна збільшити в корзині.';
+      content: 'Щоб змінити кількість і/або купити товар, перейдіть в корзину.';
       position: absolute;
       text-align: center;
-      bottom: 2px;
+      bottom: 5px;
       left: 10px;
       right: 10px;
       line-height: 16px;
@@ -58,7 +58,7 @@
     }
 
     .cardContent {
-      padding: 15px 15px 30px 15px;
+      padding: 15px 15px 50px 15px;
 
       .name {
         height: 85px;
@@ -115,6 +115,7 @@
 
       .price {
         margin-top: 40px;
+        margin-bottom: 10px;
         text-align: center;
         font-size: 30px;
         color: #296B4D;
@@ -125,18 +126,44 @@
         }
       }
 
-      a {
-        &:last-child {
-          background: #FFC124;
-          padding: 8px 25px;
-          border-radius: 5px;
-          color: #0F117A;
-          position: relative;
-          left: 50%;
-          transform: translateX(-50%);
-          margin: 10px 0 5px 0;
+      .inBasket {
+        background: #196bbf;
+        border-radius: 5px;
+        padding: 8px 15px;
+        font-size: 20px;
+        display: inline-block;
+        transition: 0.1s linear;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+          transition: 0.1s linear;
+          transform: scale(1.1) translateX(-50%);
+        }
+      }
+
+      .outBasket {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background: red;
+        border-radius: 5px;
+        padding: 8px 15px;
+        font-size: 20px;
+        display: inline-block;
+        transition: 0.1s linear;
+        text-align: end;
+
+        &:hover {
+          transition: 0.1s linear;
+          transform: scale(1.1) translateX(-50%);
         }
       }
     }
+  }
+
+  .specialInfo {
+    display: none;
   }
 }

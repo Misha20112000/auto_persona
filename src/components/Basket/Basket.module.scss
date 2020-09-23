@@ -1,6 +1,28 @@
 .basket {
-  padding: 50px 15px 20px 15px;
+  padding: 50px 15px 0 15px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  .button {
+    align-self: flex-end;
+    margin-right: 50px;
+    background: green;
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: 0.1s ease;
+
+    &:hover {
+      transition: 0.1s ease;
+      transform: scale(1.1);
+      background: darkgreen;
+    }
+  }
+
+  .empty {
+    text-align: center;
+    color: red;
+    font-size: 30px;
+  }
 }

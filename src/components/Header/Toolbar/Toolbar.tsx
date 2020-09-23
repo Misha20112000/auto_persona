@@ -3,7 +3,7 @@ import React from 'react';
 //styles
 import styles from './Toolbar.module.scss';
 //my components
-import {Menu} from './Menu/Menu';
+import Menu from './Menu/Menu';
 import {Settings} from './Settings/Settings';
 import {Authorization} from './Authorization/Authorization';
 
