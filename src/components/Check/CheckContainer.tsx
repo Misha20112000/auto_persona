@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import styles from './Check.module.scss';
 //my components
 import {Check} from './Check';
-import {Payment_And_Delivery} from './Payment_And_Delivery/Payment_And_Delivery';
+import {PaymentAndDelivery} from './PaymentAndDelivery/PaymentAndDelivery';
 //types
 import {AppStateType} from '../../redux/store';
 
@@ -46,7 +46,7 @@ const CheckContainer: React.FC<IPropsTypes> = ({products}) => {
         <>
             <Check products={products}/>
             <div className={styles.fullPrice}>Разом до сплати: {sum}грн</div>
-            <Payment_And_Delivery/>
+            <PaymentAndDelivery/>
         </>
     )
 };

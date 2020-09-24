@@ -1,0 +1,36 @@
+.title {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 24px;
+
+  img {
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 5px dotted transparent;
+    transition: 0.2s linear;
+    margin-bottom: 20px;
+
+    &:hover {
+      transition: 0.05s linear;
+      border: 5px dotted limegreen;
+    }
+  }
+
+  .active {
+    border: 5px solid limegreen;
+    transition: 0.1s linear;
+
+    &:hover {
+      border: 5px solid limegreen;
+    }
+  }
+
+}

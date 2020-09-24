@@ -127,6 +127,7 @@
       }
 
       .inBasket {
+        cursor: pointer;
         background: #196bbf;
         border-radius: 5px;
         padding: 8px 15px;
@@ -144,6 +145,7 @@
       }
 
       .outBasket {
+        cursor: pointer;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
