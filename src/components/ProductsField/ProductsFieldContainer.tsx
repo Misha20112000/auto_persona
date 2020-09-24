@@ -24,7 +24,7 @@ const GBO_kitsData = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '1.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -37,7 +37,7 @@ const GBO_kitsData = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '1.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -50,7 +50,7 @@ const GBO_kitsData = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '1.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -63,7 +63,7 @@ const GBO_kitsData = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '1.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -78,7 +78,7 @@ const injection_systemsData = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '2.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -91,7 +91,7 @@ const injection_systemsData = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '2.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -104,7 +104,7 @@ const injection_systemsData = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '2.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -117,7 +117,7 @@ const injection_systemsData = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '2.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -132,7 +132,7 @@ const gas_reducers_and_accessoriesData = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '3.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -145,7 +145,7 @@ const gas_reducers_and_accessoriesData = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '3.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -158,7 +158,7 @@ const gas_reducers_and_accessoriesData = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '3.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -171,7 +171,7 @@ const gas_reducers_and_accessoriesData = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '3.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -186,7 +186,7 @@ const nozzlesData = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '4.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -199,7 +199,7 @@ const nozzlesData = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '4.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -212,7 +212,7 @@ const nozzlesData = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '4.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -225,7 +225,7 @@ const nozzlesData = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '4.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -240,7 +240,7 @@ const filtersData = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '5.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -253,7 +253,7 @@ const filtersData = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '5.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -266,7 +266,7 @@ const filtersData = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '5.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -279,7 +279,7 @@ const filtersData = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '5.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -294,7 +294,7 @@ const electronicsGasAndGasolineValves = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '6.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -307,7 +307,7 @@ const electronicsGasAndGasolineValves = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '6.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -320,7 +320,7 @@ const electronicsGasAndGasolineValves = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '6.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -333,7 +333,7 @@ const electronicsGasAndGasolineValves = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '6.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -348,7 +348,7 @@ const tubesHosesAndAccessories = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '7.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -361,7 +361,7 @@ const tubesHosesAndAccessories = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '7.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -374,7 +374,7 @@ const tubesHosesAndAccessories = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '7.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -387,7 +387,7 @@ const tubesHosesAndAccessories = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '7.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -402,7 +402,7 @@ const cylindersFittingsMounts = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '8.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -415,7 +415,7 @@ const cylindersFittingsMounts = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '8.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -428,7 +428,7 @@ const cylindersFittingsMounts = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '8.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -441,7 +441,7 @@ const cylindersFittingsMounts = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '8.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -456,7 +456,7 @@ const gas_dispensersMixersAntiSlap = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '9.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -469,7 +469,7 @@ const gas_dispensersMixersAntiSlap = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '9.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -482,7 +482,7 @@ const gas_dispensersMixersAntiSlap = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '9.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -495,7 +495,7 @@ const gas_dispensersMixersAntiSlap = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '9.4',
         price: 76,
         specialCharacteristics: {}
     },
@@ -510,7 +510,7 @@ const equipment_for_service_stationsProtective_liquids = [
         comments: ['good GBO product (1)'],
         amount: 19,
         producer: 'producer 1',
-        id: uuidv4(),
+        id: '10.1',
         price: 10190,
         specialCharacteristics: {}
     },
@@ -523,7 +523,7 @@ const equipment_for_service_stationsProtective_liquids = [
         comments: ['good GBO product (2)'],
         amount: 819,
         producer: 'producer 2',
-        id: uuidv4(),
+        id: '10.2',
         price: 14,
         specialCharacteristics: {}
     },
@@ -536,7 +536,7 @@ const equipment_for_service_stationsProtective_liquids = [
         comments: ['good GBO product (3)'],
         amount: 0,
         producer: 'producer 3',
-        id: uuidv4(),
+        id: '10.3',
         price: 27,
         specialCharacteristics: {}
     },
@@ -549,7 +549,7 @@ const equipment_for_service_stationsProtective_liquids = [
         comments: ['good GBO product (4)'],
         amount: 45,
         producer: 'producer 4',
-        id: uuidv4(),
+        id: '10.4',
         price: 76,
         specialCharacteristics: {}
     },

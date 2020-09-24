@@ -1,6 +1,7 @@
 //other import
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {Animated} from 'react-animated-css';
 //images
 import star from '../../../assets/img/smallIcons/star.svg';
 import emptyStar from '../../../assets/img/smallIcons/emptyStar.svg';
@@ -51,7 +52,6 @@ interface IPropsTypes {
 }
 
 export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wantToBuy, imgs, comments, amount, producer, id, price, specialCharacteristics, toggleToBasket, cardStyle, plus, minus, setMoreDetailData, basketData, activeTab, changeActiveTab}) => {
-
     let stylesIf;
     switch (cardStyle) {
         case 2: {
@@ -121,11 +121,9 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
     }
 
     const basketCondition = basketData.some(product => product.id === id);
-
     // @ts-ignore
     return (
-        <div className={stylesIf.productCardWrapper}>
-
+        <Animated animationIn="zoomInDown" animationOut="bounce" animationInDuration={1000} animationOutDuration={1000} isVisible={true} className={stylesIf.productCardWrapper}>
             <div className={stylesIf.productCard}>
                 <img onClick={() => toggleProductToBasket()} className={stylesIf.dagger} src={dagger} alt=""/>
                 <div className={stylesIf.buyZone}>
@@ -181,7 +179,6 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
 
 
                 </div>
-
             </div>
 
             <div className={stylesIf.specialInfo}>
@@ -217,7 +214,7 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
                     }
                 </div>
             </div>
-        </div>
+        </Animated>
     )
 };
 

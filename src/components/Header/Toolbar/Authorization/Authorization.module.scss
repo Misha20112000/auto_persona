@@ -1,3 +1,9 @@
 .authorization {
   margin-left: 20px;
+
+  .authorizationWrapper {
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
 }

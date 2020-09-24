@@ -2,9 +2,15 @@
   display: flex;
   align-items: center;
 
-  span {
-    &:first-child {
-      color: #f6dd3d;
+  .spanWrapper {
+    display: flex;
+    align-items: center;
+    height: 40px;
+
+    span {
+      &:first-child {
+        color: #f6dd3d;
+      }
     }
   }
 
