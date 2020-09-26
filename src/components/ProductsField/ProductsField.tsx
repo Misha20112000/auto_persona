@@ -29,18 +29,24 @@ interface IPropsTypes {
     productsData: Array<IProductObject>
     basketData: any
     setMoreDetailData: (product: any) => void
-    toggleToBasket: (name :string, condition: string, rating :number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    toggleToBasket: (name: string, condition: string, rating: number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
 }
 
 const ProductsField: React.FC<IPropsTypes> = ({productsData, basketData, toggleToBasket, setMoreDetailData}) => {
 
     // @ts-ignore
-    const productsDataAfterMap = productsData.map(product => <ProductCard cardStyle={1} key={product.id} {...product} basketData={basketData} toggleToBasket={toggleToBasket} setMoreDetailData={setMoreDetailData}/>)
+    const productsDataAfterMap = productsData.map(product => <ProductCard cardStyle={1} key={product.id} {...product}
+                                                                          basketData={basketData}
+                                                                          toggleToBasket={toggleToBasket}
+                                                                          setMoreDetailData={setMoreDetailData}/>)
 
     return (
-        <div className={`${styles.productsFiled} container`}>
-            {productsDataAfterMap}
-        </div>
+        <>
+            <div className={`${styles.productsFiled} container`}>
+                {productsDataAfterMap}
+            </div>
+            <div className={styles.more}>Більше</div>
+        </>
     )
 };
 

@@ -69,8 +69,6 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
     const toggleProductToBasket = () => {
         if (amount) {
             toggleToBasket(name, condition, rating, wantToBuy, imgs, comments, amount, producer, id, price, specialCharacteristics)
-        } else {
-            alert('Товару немає в наявності')
         }
     };
 
@@ -123,7 +121,8 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
     const basketCondition = basketData.some(product => product.id === id);
     // @ts-ignore
     return (
-        <Animated animationIn="zoomInDown" animationOut="bounce" animationInDuration={1000} animationOutDuration={1000} isVisible={true} className={stylesIf.productCardWrapper}>
+        <Animated animationIn="zoomIn" animationOut="bounce" animationOutDuration={2000} isVisible={true}
+                  className={stylesIf.productCardWrapper}>
             <div className={stylesIf.productCard}>
                 <img onClick={() => toggleProductToBasket()} className={stylesIf.dagger} src={dagger} alt=""/>
                 <div className={stylesIf.buyZone}>
@@ -165,19 +164,21 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
                     <NavLink onClick={setMoreDetail} className={stylesIf.moreDetail}
                              to='/moreDetail'>Детальніше</NavLink>
                     <div className={stylesIf.price}>{price}<span>грн</span></div>
-
-                    {!basketCondition
-                        ?
-                        <div onClick={toggleProductToBasket} className={stylesIf.inBasket}>
-                            В корзину
-                        </div>
-                        :
-                        <div onClick={toggleProductToBasket} className={stylesIf.outBasket}>
-                            Викласти
-                        </div>
-                    }
-
-
+                    <div className={stylesIf.buttonWrapper}>
+                        <NavLink to='/check/singlePurchase' onClick={setMoreDetail}
+                                 className={ amount ? stylesIf.buy : stylesIf.disabledBuy}>Купити</NavLink>
+                        {!basketCondition
+                            ?
+                            <div onClick={toggleProductToBasket}
+                                 className={amount ? stylesIf.inBasket : stylesIf.disabledBasket}>
+                                В корзину
+                            </div>
+                            :
+                            <div onClick={toggleProductToBasket} className={stylesIf.outBasket}>
+                                Викласти
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
 

@@ -51,6 +51,11 @@ export const basketReducer = (state = initialState, action: any) => {
                 ...state, basketData: [...basketDataCopy]
             };
         }
+        case CLEAR_BASKET: {
+            return {
+                ...state, basketData: [],
+            };
+        }
         default:
             return state;
     }
@@ -60,6 +65,7 @@ export const basketReducer = (state = initialState, action: any) => {
 const TOGGLE_TO_BASKET = 'TOGGLE_TO_BASKET';
 const PLUS = 'PLUS';
 const MINUS = 'MINUS';
+const CLEAR_BASKET = 'CLEAR_BASKET';
 //AC
 export const toggleToBasket = (name: string, condition: string, rating: number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => {
     return {
@@ -79,3 +85,4 @@ export const toggleToBasket = (name: string, condition: string, rating: number, 
 };
 export const plus = (id: string) => ({type: PLUS, id});
 export const minus = (id: string) => ({type: MINUS, id});
+export const clearBasket = () => ({type: CLEAR_BASKET});

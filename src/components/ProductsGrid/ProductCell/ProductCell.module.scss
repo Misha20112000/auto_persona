@@ -12,17 +12,27 @@
   transition: 0.2s ease;
 
   &:hover {
-    background: #020421;
+    background: #020432;
     transition: 0.2s ease;
+    text-shadow: 0 0 5px green, 0 0 10px green, 0 0 20px green, 0 0 40px green;
   }
 }
 
 .active {
-  background-color: #80800d;
+  background-color: #00001f;
   transition: 0.2s ease;
+  color: #d61eff;
+
+  * {
+    //transition: all 0.1s linear;
+    //transition: color 0.0s linear;
+    stroke: #ff00aa;
+    fill: #000;
+    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 40px red;
+  }
 
   &:hover {
-    background-color: #9d9d0b;
+    background-color: #00001f;
     transition: 0.2s ease;
   }
 }

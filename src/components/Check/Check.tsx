@@ -20,13 +20,17 @@ interface IProductObject {
 
 interface IPropsTypes {
     products: Array<IProductObject>
+    minus: (id: string) => void
+    plus: (id: string) => void
 }
 
-export const Check: React.FC<IPropsTypes> = ({products}) => {
+export const Check: React.FC<IPropsTypes> = ({products, minus, plus}) => {
 
     const productsAfterMap = products.map(product => <tr key={product.id}>
         <td>{product.name}</td>
-        <td>{product.wantToBuy}</td>
+        <td>{product.wantToBuy}
+            <p onClick={() => product.wantToBuy > 1 && minus(product.id)}>minus</p>
+            <p onClick={() => product.wantToBuy < product.amount && plus(product.id)}>plus</p></td>
         <td>{product.price}</td>
         <td>{product.price * product.wantToBuy}</td>
     </tr>)
@@ -34,7 +38,7 @@ export const Check: React.FC<IPropsTypes> = ({products}) => {
     return (
         <>
             <div className={`${styles.check} container`}>
-                <div className={styles.title}>Ваш чек</div>
+                <div className={styles.title}><span>1</span>Ваш чек</div>
                 <table>
                     <tbody>
                     <tr>

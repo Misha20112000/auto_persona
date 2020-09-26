@@ -2,7 +2,6 @@
 import React, {useEffect} from 'react';
 import {withRouter, RouteComponentProps} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {v4 as uuidv4} from 'uuid';
 //import axios from 'axios';
 //images
 import mainImg from './../../assets/img/other/goldSkull.jpg';
@@ -64,6 +63,58 @@ const GBO_kitsData = [
         amount: 45,
         producer: 'producer 4',
         id: '1.4',
+        price: 76,
+        specialCharacteristics: {}
+    },
+    {
+        name: 'Коромисло другої ступені редуктора Atiker VR01, VR02, Коромисло другої ступені редуктора Atiker VR01, VR02',
+        condition: 'action',
+        rating: 3,
+        wantToBuy: 1,
+        imgs: [mainImg],
+        comments: ['good GBO product (1)'],
+        amount: 0,
+        producer: 'producer 1',
+        id: '1.5',
+        price: 10190,
+        specialCharacteristics: {}
+    },
+    {
+        name: 'GBO product 2',
+        condition: '',
+        rating: 4,
+        wantToBuy: 1,
+        imgs: [mainImg],
+        comments: ['good GBO product (2)'],
+        amount: 819,
+        producer: 'producer 2',
+        id: '1.6',
+        price: 14,
+        specialCharacteristics: {}
+    },
+    {
+        name: 'GBO product 3',
+        condition: 'action',
+        rating: 3,
+        wantToBuy: 1,
+        imgs: [mainImg],
+        comments: ['good GBO product (3)'],
+        amount: 2,
+        producer: 'producer 3',
+        id: '1.7',
+        price: 27,
+        specialCharacteristics: {}
+    },
+    {
+        name: 'GBO product 4',
+        condition: '',
+        rating: 4,
+        wantToBuy: 1,
+        imgs: [mainImg],
+        comments: ['good GBO product (4)'],
+        amount: 45,
+        producer: 'producer 4',
+        id: '1.8',
         price: 76,
         specialCharacteristics: {}
     },
@@ -633,7 +684,7 @@ const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({ma
             default:
                 setProducts([{}]);
         }
-    }, [match.params.category]);
+    }, [match.params.category, setProducts]);
 
     return <ProductsField productsData={productsData} setMoreDetailData={setMoreDetailData}/>
 };

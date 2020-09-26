@@ -3,3 +3,21 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.more {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 26px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: green;
+  padding: 12px 30px;
+  transition: 0.1s ease;
+
+  &:hover {
+    transition: 0.1s ease;
+    transform: translateX(-50%) scale(1.1);
+  }
+}

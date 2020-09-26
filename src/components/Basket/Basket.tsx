@@ -44,7 +44,7 @@ export const Basket: React.FC<IPropsTypes> = ({basketData, toggleToBasket, plus,
         <div className={`${styles.basket} container`}>
             {basketDataAfterMap}
             {basketDataAfterMap.length > 0
-                ? <NavLink to='/check' className={styles.button}>Підтвердити замовлення</NavLink>
+                ? <NavLink to='/check/basket' className={styles.button}>Підтвердити замовлення</NavLink>
                 : <div className={styles.empty}>Корзина порожня :((</div>}
         </div>
     )

@@ -23,6 +23,13 @@ export const moreDetailReducer = (state = initialState, action: any) => {
                 ...state, moreDetailData: moreDetailObj
             };
         }
+        // case PLUS: {
+        //     let moreDetailDataCopy = state.moreDetailData
+        //     moreDetailDataCopy.wantToBuy +=1
+        //     return {
+        //         ...state, moreDetailData: [...moreDetailDataCopy]
+        //     };
+        // }
         default:
             return state;
     }
@@ -30,5 +37,7 @@ export const moreDetailReducer = (state = initialState, action: any) => {
 
 //AT
 const SET_MORE_DETAIL_DATA = 'SET_MORE_DETAIL_DATA';
+const PLUS = 'PLUS';
 //AC
 export const setMoreDetailData = (product: any) => ({type: SET_MORE_DETAIL_DATA, product});
+export const plusMD = () => ({type: PLUS});

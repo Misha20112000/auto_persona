@@ -232,6 +232,22 @@
         }
       }
 
+      .buy {
+        background: green;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 8px 15px;
+        font-size: 20px;
+        margin-bottom: 15px;
+        transition: 0.1s linear;
+
+        &:hover {
+          transition: 0.1s linear;
+          transform: scale(1.1);
+        }
+      }
+
       .inBasket {
         background: #196bbf;
         border-radius: 5px;
@@ -245,6 +261,15 @@
           transition: 0.1s linear;
           transform: scale(1.1);
         }
+      }
+
+      .disabledBasket {
+        cursor: default;
+        background: grey;
+        border-radius: 5px;
+        padding: 8px 15px;
+        font-size: 20px;
+        display: inline-block;
       }
 
       .outBasket {
