@@ -12,6 +12,7 @@ import ProductsFieldContainer from './ProductsField/ProductsFieldContainer';
 import BasketContainer from './Basket/BasketContainer';
 import CheckContainer from './Check/CheckContainer';
 import {Gratitude} from './Gratitude/Gratitude';
+import MoreDetailContainer from './MoreDetail/MoreDetailContainer';
 
 export const App = () => {
     return (
@@ -23,6 +24,7 @@ export const App = () => {
                 <ProductsGrid/>
                 <Route path='/products/:category' render={() => <ProductsFieldContainer/>}/>
                 <Route path='/basket' render={() => <BasketContainer/>}/>
+                <Route path='/moreDetail' render={() => <MoreDetailContainer/>}/>
                 <Route path='/check/:localization?' render={() => <CheckContainer/>}/>
                 <Route path='/gratitude' render={() => <Gratitude/>}/>
                 <Footer/>
