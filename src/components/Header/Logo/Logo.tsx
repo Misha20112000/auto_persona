@@ -2,15 +2,12 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {Animated} from 'react-animated-css';
-//images
 //styles
 // import styles from './Logo.module.scss';
-//my components
 
 export const Logo = () => {
     return (
-        // @ts-ignore
-        <Animated animationIn="bounceInLeft" isVisible={true}>
+        <Animated animationIn="bounceInLeft" animationOut="bounceInRight" isVisible={true}>
             <NavLink to='/home'>
                 <svg width="141" height="36" viewBox="0 0 141 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

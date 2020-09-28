@@ -8,11 +8,9 @@ import styles from './SearchField.module.scss';
 export const SearchField = () => {
     return (
         <div className={`${styles.searchField} container`}>
-            <Animated className={styles.inputWrapper} animationIn="bounceInLeft" animationOut="bounceInLeft" animationInDuration={1000}
-                      isVisible={true}>
-                <input placeholder='Пошук по назві/коду товару:' type="text"/>
+            <Animated className={styles.inputWrapper} animationIn="bounceInLeft" animationOut="bounceInLeft" animationInDuration={1000} isVisible={true}><input placeholder='Пошук по назві/коду товару:' type="text"/>
             </Animated>
-            <Animated className={styles.buttonWrapper} animationIn="bounceInDown" animationOut="bounceInLeft" animationInDuration={1000}
+            <Animated animationIn="bounceInDown" animationOut="bounceInLeft" animationInDuration={1000}
                       isVisible={true}>
                 <button>Найти</button>
             </Animated>

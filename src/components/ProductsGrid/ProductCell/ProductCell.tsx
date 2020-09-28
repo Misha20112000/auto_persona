@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 import {Animated} from 'react-animated-css';
 //styles
 import styles from './ProductCell.module.scss';
-
 //my components
 
 interface IPropsTypes {
@@ -16,11 +15,13 @@ interface IPropsTypes {
 
 export const ProductCell: React.FC<IPropsTypes> = ({title, img, path, duration}) => {
     return (
-        <NavLink activeClassName={styles.active} to={path} className={styles.productCell}>
-            <Animated animationIn="fadeIn" animationOut="bounceInLeft" animationInDuration={duration}
-                      isVisible={true}>{img}</Animated>
-            <p>{title}</p>
-        </NavLink>
+        <Animated className={styles.productCellWrapper} animationIn="zoomInDown" animationOut="bounceInLeft" animationInDuration={duration}
+                  isVisible={true}>
+            <NavLink className={styles.productCell} activeClassName={styles.active} to={path}>
+                <div className={styles.img}>{img}</div>
+                <p>{title}</p>
+            </NavLink>
+        </Animated>
     )
 };
 

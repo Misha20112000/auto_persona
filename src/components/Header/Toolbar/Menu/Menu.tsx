@@ -9,35 +9,29 @@ import styles from './Menu.module.scss';
 //types
 import {AppStateType} from '../../../../redux/store';
 
-interface IProductObject {
-    name: string
-    condition: string
-    rating: number
-    wantToBuy: number
-    inBasket: boolean
-    imgs: Array<string>
-    comments: Array<string>
-    amount: number
-    producer: string
-    id: string
-    price: number
-    specialCharacteristics: object
-}
-
-
 interface IPropsTypes {
-    basketData: Array<IProductObject>
+    basketDataLength: number
 }
 
-const Menu: React.FC<IPropsTypes> = ({basketData}) => {
+const Menu: React.FC<IPropsTypes> = ({basketDataLength}) => {
     return (
-        <nav className={styles.menu}>
+        <nav className={styles.navMenu}>
             <ul>
-                <Animated animationIn="fadeInDown" animationInDuration={300} animationOut="fadeOut" isVisible={true}><li><NavLink activeClassName={styles.active} to='/home'>Головна</NavLink></li></Animated>
-                <Animated animationIn="fadeInDown" animationInDuration={600} animationOut="fadeOut" isVisible={true}><li><NavLink activeClassName={styles.active} to='/basket'>Корзина</NavLink></li></Animated>
-                <Animated animationIn="fadeInDown" animationInDuration={900} animationOut="fadeOut" isVisible={true}><li><NavLink activeClassName={styles.active} to='/HBO_manufacturers'>Виробники ГБО</NavLink></li></Animated>
-                <Animated animationIn="fadeInDown" animationInDuration={1200} animationOut="fadeOut" isVisible={true}><li><NavLink activeClassName={styles.active} to='/contacts'>Контакти</NavLink></li></Animated>
-                {basketData.length > 0 ? <Animated  className={styles.number} animationIn="fadeInDown" animationInDuration={1200} animationOut="fadeOut" isVisible={true}><div>{basketData.length}</div></Animated> : null}
+                <Animated animationIn="fadeInDown" animationInDuration={300} animationOut="fadeOut" isVisible={true}>
+                    <li><NavLink activeClassName={styles.active} to='/home'>Головна</NavLink></li>
+                </Animated>
+                <Animated animationIn="fadeInDown" animationInDuration={600} animationOut="fadeOut" isVisible={true}>
+                    <li>{basketDataLength
+                        ? <Animated className={styles.basketQuantity} animationIn="fadeInDown" animationInDuration={1200}
+                                  animationOut="fadeOut" isVisible={true}>{basketDataLength}</Animated> : null}
+                        <NavLink activeClassName={styles.active} to='/basket'>Корзина</NavLink></li>
+                </Animated>
+                <Animated animationIn="fadeInDown" animationInDuration={900} animationOut="fadeOut" isVisible={true}>
+                    <li><NavLink activeClassName={styles.active} to='/HBO_manufacturers'>Виробники ГБО</NavLink></li>
+                </Animated>
+                <Animated animationIn="fadeInDown" animationInDuration={1200} animationOut="fadeOut" isVisible={true}>
+                    <li><NavLink activeClassName={styles.active} to='/contacts'>Контакти</NavLink></li>
+                </Animated>
             </ul>
         </nav>
     )
@@ -45,7 +39,7 @@ const Menu: React.FC<IPropsTypes> = ({basketData}) => {
 
 const mapStateToProps = (state: AppStateType) => {
     return {
-        basketData: state.basketReducer.basketData
+        basketDataLength: state.basketReducer.basketData.length
     }
 }
 

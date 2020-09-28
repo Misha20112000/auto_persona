@@ -7,9 +7,14 @@ import styles from './Authorization.module.scss';
 
 export const Authorization = () => {
     return (
-        <div className={styles.authorization}>
-            <Animated className={styles.authorizationWrapper} animationIn="fadeInDown" animationInDuration={1900} animationOut="fadeOut" isVisible={true}><span>Вхід</span>/<span>Реєстрація</span></Animated>
-        </div>
+        <Animated className={styles.authorizationWrapper}
+                  animationIn="fadeInDown"
+                  animationInDuration={1900}
+                  animationOut="fadeOut" isVisible={true}>
+            <div className={styles.authorization}>
+                <span>Вхід</span>/<span>Реєстрація</span>
+            </div>
+        </Animated>
     )
 };
 

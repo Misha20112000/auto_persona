@@ -17,10 +17,10 @@ import {Gratitude} from './Gratitude/Gratitude';
 export const App = () => {
     return (
         <div className={styles.app}>
-            <div className={styles.eclipse}> </div>
+            <div className={styles.eclipse}>ECLIPSE</div>
             <div className={styles.content}>
-                <Header/>
-                <SearchField/>
+                <Header/> {/*<--|true|-->*/}
+                <SearchField/> {/*<--|true|-->*/}
                 <ProductsGrid/>
                 <Route path='/products/:category' render={() => <ProductsFieldContainer/>}/>
                 <Route path='/basket' render={() => <BasketContainer/>}/>
