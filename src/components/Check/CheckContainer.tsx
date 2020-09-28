@@ -12,24 +12,8 @@ import {clearBasket, minus, plus} from '../../redux/basketReducer';
 //types
 import {AppStateType} from '../../redux/store';
 
-interface IProductObject {
-    name: string
-    condition: string
-    rating: number
-    wantToBuy: number
-    inBasket: boolean
-    imgs: Array<string>
-    comments: Array<string>
-    amount: number
-    producer: string
-    id: string
-    price: number
-    specialCharacteristics: object
-}
-
 interface IPropsTypes {
-    productsDataFromBasket: Array<IProductObject>
-    productsDataSinglePurchase: IProductObject
+    basketData: Array<IProductObject>
     clearBasket: () => void
     minus: (id: string) => void
     plus: (id: string) => void
@@ -45,13 +29,13 @@ interface IPropsTypes {
 }
 
 
-const CheckContainer: React.FC<IPropsTypes> = ({productsDataFromBasket, clearBasket, match, productsDataSinglePurchase, minus, plus}) => {
-    let products;
+const CheckContainer: React.FC<IPropsTypes> = ({basketData, clearBasket, match, minus, plus}) => {
+    let products: any[];
 
     if (match.params.localization === 'singlePurchase') {
-        products = [{...productsDataSinglePurchase}];
+        products = [];
     } else {
-        products = productsDataFromBasket;
+        products = basketData;
     }
 
     const priceArray = products.map(product => product.price * product.wantToBuy);
@@ -76,8 +60,7 @@ const CheckContainer: React.FC<IPropsTypes> = ({productsDataFromBasket, clearBas
 
 const mapStateToProps = (state: AppStateType) => {
     return {
-        productsDataFromBasket: state.basketReducer.basketData,
-        productsDataSinglePurchase: state.moreDetailReducer.moreDetailData,
+        basketData: state.basketReducer.basketData,
 
         name: state.personalDataReducer.name,
         phoneNumber: state.personalDataReducer.phoneNumber,

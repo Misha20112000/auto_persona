@@ -3,21 +3,6 @@ import React from 'react';
 //styles
 import styles from './Check.module.scss';
 
-interface IProductObject {
-    name: string
-    condition: string
-    rating: number
-    wantToBuy: number
-    inBasket: boolean
-    imgs: Array<string>
-    comments: Array<string>
-    amount: number
-    producer: string
-    id: string
-    price: number
-    specialCharacteristics: object
-}
-
 interface IPropsTypes {
     products: Array<IProductObject>
     minus: (id: string) => void
@@ -26,13 +11,13 @@ interface IPropsTypes {
 
 export const Check: React.FC<IPropsTypes> = ({products, minus, plus}) => {
 
-    const productsAfterMap = products.map(product => <tr key={product.id}>
-        <td>{product.name}</td>
-        <td>{product.wantToBuy}
-            <p onClick={() => product.wantToBuy > 1 && minus(product.id)}>minus</p>
-            <p onClick={() => product.wantToBuy < product.amount && plus(product.id)}>plus</p></td>
-        <td>{product.price}</td>
-        <td>{product.price * product.wantToBuy}</td>
+    const productsAfterMap = products.map(productData => <tr key={productData.id}>
+        <td>{productData.name}</td>
+        <td>{productData.wantToBuy}
+            <p onClick={() => productData.wantToBuy > 1 && minus(productData.id)}>minus</p>
+            <p onClick={() => productData.wantToBuy < productData.amount && plus(productData.id)}>plus</p></td>
+        <td>{productData.price}</td>
+        <td>{productData.price * productData.wantToBuy}</td>
     </tr>)
 
     return (

@@ -13,45 +13,19 @@ import styles3 from './ProductCard_3.module.scss';
 
 //my components
 
-interface IProductObject {
-    name: string
-    condition: string
-    rating: number
-    wantToBuy: number
-    inBasket: boolean
-    imgs: Array<string>
-    comments: Array<string>
-    amount: number
-    producer: string
-    id: string
-    price: number
-    specialCharacteristics: object
-}
-
 interface IPropsTypes {
-    name: string
-    condition: string
-    rating: number
-    wantToBuy: number
-    inBasket: boolean
-    imgs: Array<string>
-    comments: Array<string>
-    amount: number
-    producer: string
-    id: string
-    price: number
-    specialCharacteristics: object
-    toggleToBasket: (name: string, condition: string, rating: number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    productData: IProductObject
+    toggleToBasket: (product: IProductObject) => void
     cardStyle: number
     plus?: (id: string) => void
     minus?: (id: string) => void
-    setMoreDetailData?: (product: any) => void
     basketData: Array<IProductObject>
     activeTab?: number
     changeActiveTab?: (activeTab: number) => void
 }
 
-export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wantToBuy, imgs, comments, amount, producer, id, price, specialCharacteristics, toggleToBasket, cardStyle, plus, minus, setMoreDetailData, basketData, activeTab, changeActiveTab}) => {
+export const ProductCard: React.FC<IPropsTypes> = ({productData, toggleToBasket, cardStyle, plus, minus, basketData, activeTab, changeActiveTab}) => {
+
     let stylesIf;
     switch (cardStyle) {
         case 2: {
@@ -67,23 +41,23 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
     }
 
     const toggleProductToBasket = () => {
-        if (amount) {
-            toggleToBasket(name, condition, rating, wantToBuy, imgs, comments, amount, producer, id, price, specialCharacteristics)
+        if (productData.amount) {
+            toggleToBasket(productData)
         }
     };
 
     const starsArray = [];
 
-    for (let i = 0; i < rating; i++) {
+    for (let i = 0; i < productData.rating; i++) {
         starsArray.push(i);
     }
 
     const startArrayAfterMap = starsArray.map(number => <img key={number} src={star} alt=""/>)
 
     const plusProduct = () => {
-        if (wantToBuy < amount) {
+        if (productData.wantToBuy < productData.amount) {
             if (plus) {
-                plus(id);
+                plus(productData.id);
             }
         } else {
             alert('Неможлива операція.')
@@ -91,9 +65,9 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
     };
 
     const minusProduct = () => {
-        if (wantToBuy > 1) {
+        if (productData.wantToBuy > 1) {
             if (minus) {
-                minus(id);
+                minus(productData.id);
             }
         } else {
             alert('Неможлива операція.')
@@ -101,24 +75,10 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
     }
 
     const setMoreDetail = () => {
-        if (setMoreDetailData) {
-            setMoreDetailData({
-                name,
-                condition,
-                rating,
-                wantToBuy,
-                imgs,
-                comments,
-                amount,
-                producer,
-                id,
-                price,
-                specialCharacteristics
-            });
-        }
+        alert('more detail');
     }
 
-    const basketCondition = basketData.some(product => product.id === id);
+    const basketCondition = basketData.some(productFromBasket => productFromBasket.id === productData.id);
     // @ts-ignore
     return (
         <Animated animationIn="zoomIn" animationOut="bounce" animationOutDuration={2000} isVisible={true}
@@ -129,21 +89,21 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
                     <div className={stylesIf.amount}>
                         <p className={stylesIf.title}>Кількість</p>
                         <span onClick={minusProduct} className={stylesIf.minus}> </span>
-                        <span>{wantToBuy}</span>
+                        <span>{productData.wantToBuy}</span>
                         <span onClick={plusProduct} className={stylesIf.plus}> </span>
                     </div>
                     <div className={stylesIf.price}>
-                        {price}<span>грн</span>
+                        {productData.price}<span>грн</span>
                     </div>
                     <div className={stylesIf.totalPrice}>
-                        Вартість за {wantToBuy}шт. - {price * wantToBuy}грн
+                        Вартість за {productData.wantToBuy}шт. - {productData.price * productData.wantToBuy}грн
                     </div>
                 </div>
-                <div style={{backgroundImage: `url(${imgs[0]})`}} className={stylesIf.bgImg}>
-                    {condition === 'action' ? <div className={stylesIf.action}>Акція!</div> : null}
+                <div style={{backgroundImage: `url(${productData.imgs[0]})`}} className={stylesIf.bgImg}>
+                    {productData.condition === 'action' ? <div className={stylesIf.action}>Акція!</div> : null}
                 </div>
                 <div className={stylesIf.cardContent}>
-                    <div className={stylesIf.name}>{name}</div>
+                    <div className={stylesIf.name}>{productData.name}</div>
                     <div className={stylesIf.stars}>
                         <div className={stylesIf.emptyStars}>
                             <img src={emptyStar} alt=""/>
@@ -157,20 +117,20 @@ export const ProductCard: React.FC<IPropsTypes> = ({name, condition, rating, wan
                         </div>
                     </div>
                     <div className={stylesIf.comment}>Залишити відгук</div>
-                    {amount ? <div className={stylesIf.inStock}>В наявності {amount} шт.</div> :
+                    {productData.amount ? <div className={stylesIf.inStock}>В наявності {productData.amount} шт.</div> :
                         <div className={stylesIf.havNot}>Зараз немає</div>}
-                    <div className={stylesIf.producer}>Виробник: {producer}</div>
-                    <div className={stylesIf.id}>Код товару: {id}</div>
+                    <div className={stylesIf.producer}>Виробник: {productData.producer}</div>
+                    <div className={stylesIf.id}>Код товару: {productData.id}</div>
                     <NavLink onClick={setMoreDetail} className={stylesIf.moreDetail}
                              to='/moreDetail'>Детальніше</NavLink>
-                    <div className={stylesIf.price}>{price}<span>грн</span></div>
+                    <div className={stylesIf.price}>{productData.price}<span>грн</span></div>
                     <div className={stylesIf.buttonWrapper}>
                         <NavLink to='/check/singlePurchase' onClick={setMoreDetail}
-                                 className={ amount ? stylesIf.buy : stylesIf.disabledBuy}>Купити</NavLink>
+                                 className={ productData.amount ? stylesIf.buy : stylesIf.disabledBuy}>Купити</NavLink>
                         {!basketCondition
                             ?
                             <div onClick={toggleProductToBasket}
-                                 className={amount ? stylesIf.inBasket : stylesIf.disabledBasket}>
+                                 className={productData.amount ? stylesIf.inBasket : stylesIf.disabledBasket}>
                                 В корзину
                             </div>
                             :

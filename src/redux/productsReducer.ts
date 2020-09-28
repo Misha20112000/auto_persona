@@ -24,5 +24,5 @@ export const productsReducer = (state = initialState, action: any) => {
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const CHANGE_ACTIVE_TAB = 'CHANGE_ACTIVE_TAB';
 //AC
-export const setProducts = (productsData: Array<object>) => ({type: SET_PRODUCTS, productsData});
+export const setProducts = (productsData: Array<IProductObject>) => ({type: SET_PRODUCTS, productsData});
 export const changeActiveTab = (activeTab: number) => ({type: CHANGE_ACTIVE_TAB, activeTab});

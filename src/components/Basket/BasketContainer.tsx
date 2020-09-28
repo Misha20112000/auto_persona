@@ -5,35 +5,18 @@ import {connect} from 'react-redux';
 import {Basket} from './Basket';
 //func
 import {minus, plus, toggleToBasket} from '../../redux/basketReducer';
-import {setMoreDetailData} from '../../redux/moreDetailReducer';
 //types
 import {AppStateType} from '../../redux/store';
 
-interface IProduct {
-    name: string
-    condition: string
-    rating: number
-    wantToBuy: number
-    inBasket: boolean
-    imgs: Array<string>
-    comments: Array<string>
-    amount: number
-    producer: string
-    id: string
-    price: number
-    specialCharacteristics: object
-}
-
 interface IPropsTypes {
-    basketData: Array<IProduct>
-    toggleToBasket: (name: string, condition: string, rating: number, wantToBuy: number, imgs: Array<string>, comments: Array<string>, amount: number, producer: string, id: string, price: number, specialCharacteristics: object) => void
+    basketData: Array<IProductObject>
+    toggleToBasket: (product: IProductObject) => void
     plus: (id: string) => void
     minus: (id: string) => void
-    setMoreDetailData: (product: any) => void
 }
 
-const BasketContainer: React.FC<IPropsTypes> = ({basketData, toggleToBasket, plus, minus, setMoreDetailData}) => {
-    return <Basket minus={minus} plus={plus} basketData={basketData} toggleToBasket={toggleToBasket} setMoreDetailData={setMoreDetailData}/>
+const BasketContainer: React.FC<IPropsTypes> = ({basketData, toggleToBasket, plus, minus}) => {
+    return <Basket minus={minus} plus={plus} basketData={basketData} toggleToBasket={toggleToBasket}/>
 };
 
 const mapStateToProps = (state: AppStateType) => {
@@ -42,4 +25,4 @@ const mapStateToProps = (state: AppStateType) => {
     }
 }
 
-export default connect(mapStateToProps, {toggleToBasket, plus, minus, setMoreDetailData})(BasketContainer);
+export default connect(mapStateToProps, {toggleToBasket, plus, minus})(BasketContainer);

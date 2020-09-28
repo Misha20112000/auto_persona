@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 import {Animated} from 'react-animated-css';
 //styles
 import styles from './ProductCell.module.scss';
-//my components
 
 interface IPropsTypes {
     title: string
