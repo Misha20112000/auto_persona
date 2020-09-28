@@ -14,8 +14,8 @@ export const Check: React.FC<IPropsTypes> = ({products, minus, plus}) => {
     const productsAfterMap = products.map(productData => <tr key={productData.id}>
         <td>{productData.name}</td>
         <td>{productData.wantToBuy}
-            <p onClick={() => productData.wantToBuy > 1 && minus(productData.id)}>minus</p>
-            <p onClick={() => productData.wantToBuy < productData.amount && plus(productData.id)}>plus</p></td>
+            <p onClick={() => productData.wantToBuy > 1 && minus(productData.id)}>-</p>
+            <p onClick={() => productData.wantToBuy < productData.amount && plus(productData.id)}>+</p></td>
         <td>{productData.price}</td>
         <td>{productData.price * productData.wantToBuy}</td>
     </tr>)

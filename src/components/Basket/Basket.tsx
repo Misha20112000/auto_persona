@@ -11,17 +11,19 @@ interface IPropsTypes {
     toggleToBasket: (product: IProductObject) => void
     plus: (id: string) => void
     minus: (id: string) => void
+    setSinglePurchaseData: (product: IProductObject) => void
 }
 
-export const Basket: React.FC<IPropsTypes> = ({basketData, toggleToBasket, plus, minus}) => {
+export const Basket: React.FC<IPropsTypes> = ({basketData, toggleToBasket, plus, minus, setSinglePurchaseData}) => {
 
     const basketDataAfterMap = basketData.map((product) => <ProductCard cardStyle={2}
-                                                                      key={product.id}
-                                                                      productData={product}
-                                                                      minus={minus}
-                                                                      plus={plus}
-                                                                      basketData={basketData}
-                                                                      toggleToBasket={toggleToBasket}/>)
+                                                                        key={product.id}
+                                                                        productData={product}
+                                                                        minus={minus}
+                                                                        plus={plus}
+                                                                        basketData={basketData}
+                                                                        setSinglePurchaseData={setSinglePurchaseData}
+                                                                        toggleToBasket={toggleToBasket}/>)
 
     return (
         <div className={`${styles.basket} container`}>

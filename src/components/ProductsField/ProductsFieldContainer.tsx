@@ -8,6 +8,7 @@ import {ProductsField} from './ProductsField';
 //my func
 import {setProducts} from '../../redux/productsReducer';
 import {toggleToBasket} from '../../redux/basketReducer';
+import {setSinglePurchaseData} from '../../redux/singlePurchaseReducer';
 //types
 import {AppStateType} from '../../redux/store';
 //fakeDatabase
@@ -26,9 +27,10 @@ interface IPropsTypes {
     productsData: Array<IProductObject>
     basketData: Array<IProductObject>
     toggleToBasket: (product: IProductObject) => void
+    setSinglePurchaseData: (product: IProductObject) => void
 }
 
-const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({match, setProducts, productsData, basketData, toggleToBasket}) => {
+const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({match, setProducts, productsData, basketData, toggleToBasket, setSinglePurchaseData}) => {
     /* Ф-ція, що робить запит на сервер за товаром при рендері і сетає відповідь в productsReducer */
     useEffect(() => {
         /* Шаблон запиту на сервер
@@ -84,7 +86,7 @@ const ProductsFieldContainer: React.FC<IPropsTypes & RouteComponentProps> = ({ma
         }
     }, [match.params.category, setProducts]);
 
-    return <ProductsField productsData={productsData} basketData={basketData} toggleToBasket={toggleToBasket}/>
+    return <ProductsField productsData={productsData} basketData={basketData} toggleToBasket={toggleToBasket} setSinglePurchaseData={setSinglePurchaseData}/>
 };
 
 const mapStateToProps = (state: AppStateType) => {
@@ -95,5 +97,5 @@ const mapStateToProps = (state: AppStateType) => {
 };
 
 // @ts-ignore
-export default connect(mapStateToProps, {setProducts, toggleToBasket})(withRouter(ProductsFieldContainer));
+export default connect(mapStateToProps, {setProducts, toggleToBasket, setSinglePurchaseData})(withRouter(ProductsFieldContainer));
 

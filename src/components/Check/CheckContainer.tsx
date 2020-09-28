@@ -9,6 +9,7 @@ import {Check} from './Check';
 import {PaymentAndDelivery} from './PaymentAndDelivery/PaymentAndDelivery';
 //func
 import {clearBasket, minus, plus} from '../../redux/basketReducer';
+import {minusSP, plusSP} from '../../redux/singlePurchaseReducer';
 //types
 import {AppStateType} from '../../redux/store';
 
@@ -17,6 +18,8 @@ interface IPropsTypes {
     clearBasket: () => void
     minus: (id: string) => void
     plus: (id: string) => void
+    minusSP: (id: string) => void
+    plusSP: (id: string) => void
     match: {
         isExact: boolean
         path: string
@@ -26,16 +29,23 @@ interface IPropsTypes {
             category: string
         }
     }
+    singlePurchaseData: IProductObject
 }
 
 
-const CheckContainer: React.FC<IPropsTypes> = ({basketData, clearBasket, match, minus, plus}) => {
+const CheckContainer: React.FC<IPropsTypes> = ({basketData, clearBasket, match, minus, plus, singlePurchaseData, minusSP, plusSP}) => {
     let products: any[];
+    let plusGlobal: (id: string) => void;
+    let minusGlobal: (id: string) => void;
 
     if (match.params.localization === 'singlePurchase') {
-        products = [];
+        products = [{...singlePurchaseData}];
+        plusGlobal = plusSP
+        minusGlobal = minusSP
     } else {
         products = basketData;
+        plusGlobal = plus
+        minusGlobal = minus
     }
 
     const priceArray = products.map(product => product.price * product.wantToBuy);
@@ -51,7 +61,7 @@ const CheckContainer: React.FC<IPropsTypes> = ({basketData, clearBasket, match, 
 
     return (
         <>
-            <Check products={products} minus={minus} plus={plus}/>
+            <Check products={products} minus={minusGlobal} plus={plusGlobal}/>
             <div className={styles.fullPrice}>Разом до сплати: {sum}грн</div>
             <PaymentAndDelivery localization={match.params.localization} clearBasket={clearBasket}/>
         </>
@@ -61,6 +71,7 @@ const CheckContainer: React.FC<IPropsTypes> = ({basketData, clearBasket, match, 
 const mapStateToProps = (state: AppStateType) => {
     return {
         basketData: state.basketReducer.basketData,
+        singlePurchaseData: state.singlePurchaseReducer.singlePurchaseData,
 
         name: state.personalDataReducer.name,
         phoneNumber: state.personalDataReducer.phoneNumber,
@@ -71,4 +82,4 @@ const mapStateToProps = (state: AppStateType) => {
 }
 
 // @ts-ignore
-export default connect(mapStateToProps, {clearBasket, minus, plus})(withRouter(CheckContainer));
+export default connect(mapStateToProps, {clearBasket, minus, plus, minusSP, plusSP})(withRouter(CheckContainer));

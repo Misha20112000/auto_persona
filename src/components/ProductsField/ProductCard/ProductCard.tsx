@@ -22,9 +22,10 @@ interface IPropsTypes {
     basketData: Array<IProductObject>
     activeTab?: number
     changeActiveTab?: (activeTab: number) => void
+    setSinglePurchaseData: (product: IProductObject) => void
 }
 
-export const ProductCard: React.FC<IPropsTypes> = ({productData, toggleToBasket, cardStyle, plus, minus, basketData, activeTab, changeActiveTab}) => {
+export const ProductCard: React.FC<IPropsTypes> = ({productData, toggleToBasket, cardStyle, plus, minus, basketData, activeTab, changeActiveTab, setSinglePurchaseData}) => {
 
     let stylesIf;
     switch (cardStyle) {
@@ -74,8 +75,8 @@ export const ProductCard: React.FC<IPropsTypes> = ({productData, toggleToBasket,
         }
     }
 
-    const setMoreDetail = () => {
-        alert('more detail');
+    const setSinglePurchaseDataLocal = () => {
+        setSinglePurchaseData(productData)
     }
 
     const basketCondition = basketData.some(productFromBasket => productFromBasket.id === productData.id);
@@ -121,12 +122,12 @@ export const ProductCard: React.FC<IPropsTypes> = ({productData, toggleToBasket,
                         <div className={stylesIf.havNot}>Зараз немає</div>}
                     <div className={stylesIf.producer}>Виробник: {productData.producer}</div>
                     <div className={stylesIf.id}>Код товару: {productData.id}</div>
-                    <NavLink onClick={setMoreDetail} className={stylesIf.moreDetail}
+                    <NavLink onClick={setSinglePurchaseDataLocal} className={stylesIf.moreDetail}
                              to='/moreDetail'>Детальніше</NavLink>
                     <div className={stylesIf.price}>{productData.price}<span>грн</span></div>
                     <div className={stylesIf.buttonWrapper}>
-                        <NavLink to='/check/singlePurchase' onClick={setMoreDetail}
-                                 className={ productData.amount ? stylesIf.buy : stylesIf.disabledBuy}>Купити</NavLink>
+                        <NavLink to='/check/singlePurchase' onClick={setSinglePurchaseDataLocal}
+                                 className={productData.amount ? stylesIf.buy : stylesIf.disabledBuy}>Купити</NavLink>
                         {!basketCondition
                             ?
                             <div onClick={toggleProductToBasket}

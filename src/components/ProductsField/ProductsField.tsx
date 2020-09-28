@@ -9,15 +9,16 @@ interface IPropsTypes {
     productsData: Array<IProductObject>
     basketData: Array<IProductObject>
     toggleToBasket: (product: IProductObject) => void
+    setSinglePurchaseData: (product: IProductObject) => void
 }
 
-export const ProductsField: React.FC<IPropsTypes> = ({productsData, basketData, toggleToBasket}) => {
-debugger;
+export const ProductsField: React.FC<IPropsTypes> = ({productsData, basketData, toggleToBasket, setSinglePurchaseData}) => {
 
     const productsDataAfterMap = productsData.map(product => <ProductCard cardStyle={1}
                                                                           key={product.id}
                                                                           productData={product}
                                                                           basketData={basketData}
+                                                                          setSinglePurchaseData={setSinglePurchaseData}
                                                                           toggleToBasket={toggleToBasket}/>)
 
     return (
