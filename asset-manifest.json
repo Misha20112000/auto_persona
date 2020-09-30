@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/auto_persona/static/css/main.0d46e876.chunk.css",
-    "main.js": "/auto_persona/static/js/main.5536f4c4.chunk.js",
-    "main.js.map": "/auto_persona/static/js/main.5536f4c4.chunk.js.map",
+    "main.js": "/auto_persona/static/js/main.619b3956.chunk.js",
+    "main.js.map": "/auto_persona/static/js/main.619b3956.chunk.js.map",
     "runtime-main.js": "/auto_persona/static/js/runtime-main.8ae20f3b.js",
     "runtime-main.js.map": "/auto_persona/static/js/runtime-main.8ae20f3b.js.map",
     "static/js/2.9bb55f44.chunk.js": "/auto_persona/static/js/2.9bb55f44.chunk.js",
     "static/js/2.9bb55f44.chunk.js.map": "/auto_persona/static/js/2.9bb55f44.chunk.js.map",
     "index.html": "/auto_persona/index.html",
-    "precache-manifest.cc121c119bdf49cb2438c0e5bb4e0732.js": "/auto_persona/precache-manifest.cc121c119bdf49cb2438c0e5bb4e0732.js",
+    "precache-manifest.19e9587fbfab6bef3eb14322d444170a.js": "/auto_persona/precache-manifest.19e9587fbfab6bef3eb14322d444170a.js",
     "service-worker.js": "/auto_persona/service-worker.js",
     "static/css/main.0d46e876.chunk.css.map": "/auto_persona/static/css/main.0d46e876.chunk.css.map",
     "static/js/2.9bb55f44.chunk.js.LICENSE.txt": "/auto_persona/static/js/2.9bb55f44.chunk.js.LICENSE.txt",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.8ae20f3b.js",
     "static/js/2.9bb55f44.chunk.js",
     "static/css/main.0d46e876.chunk.css",
-    "static/js/main.5536f4c4.chunk.js"
+    "static/js/main.619b3956.chunk.js"
   ]
 }
