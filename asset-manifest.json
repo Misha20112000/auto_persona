@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/auto_persona/static/css/main.0d46e876.chunk.css",
+    "main.js": "/auto_persona/static/js/main.47a70f7f.chunk.js",
+    "main.js.map": "/auto_persona/static/js/main.47a70f7f.chunk.js.map",
+    "runtime-main.js": "/auto_persona/static/js/runtime-main.8ae20f3b.js",
+    "runtime-main.js.map": "/auto_persona/static/js/runtime-main.8ae20f3b.js.map",
+    "static/js/2.6c09c56f.chunk.js": "/auto_persona/static/js/2.6c09c56f.chunk.js",
+    "static/js/2.6c09c56f.chunk.js.map": "/auto_persona/static/js/2.6c09c56f.chunk.js.map",
+    "index.html": "/auto_persona/index.html",
+    "precache-manifest.fa3f35dd94c879bdade580c42341546d.js": "/auto_persona/precache-manifest.fa3f35dd94c879bdade580c42341546d.js",
+    "service-worker.js": "/auto_persona/service-worker.js",
+    "static/css/main.0d46e876.chunk.css.map": "/auto_persona/static/css/main.0d46e876.chunk.css.map",
+    "static/js/2.6c09c56f.chunk.js.LICENSE.txt": "/auto_persona/static/js/2.6c09c56f.chunk.js.LICENSE.txt",
+    "static/media/bg.jpg": "/auto_persona/static/media/bg.8a1e8457.jpg",
+    "static/media/bg_1.jpg": "/auto_persona/static/media/bg_1.77c8fb52.jpg",
+    "static/media/bg_2.jpg": "/auto_persona/static/media/bg_2.bb8abfdf.jpg",
+    "static/media/bg_3.jpg": "/auto_persona/static/media/bg_3.c241681b.jpg",
+    "static/media/bg_4.jpg": "/auto_persona/static/media/bg_4.0ee360ac.jpg",
+    "static/media/cart.svg": "/auto_persona/static/media/cart.39abd780.svg",
+    "static/media/copyright.svg": "/auto_persona/static/media/copyright.d96ac15e.svg",
+    "static/media/courier.jpg": "/auto_persona/static/media/courier.43d8b2d4.jpg",
+    "static/media/dagger.svg": "/auto_persona/static/media/dagger.9acd9db1.svg",
+    "static/media/emptyStar.svg": "/auto_persona/static/media/emptyStar.9062ede6.svg",
+    "static/media/facebook.svg": "/auto_persona/static/media/facebook.b9416a2f.svg",
+    "static/media/goldSkull.jpg": "/auto_persona/static/media/goldSkull.024ffb8d.jpg",
+    "static/media/instagram.svg": "/auto_persona/static/media/instagram.66f3026d.svg",
+    "static/media/newPost.jpg": "/auto_persona/static/media/newPost.12053df8.jpg",
+    "static/media/selfPickup.jpg": "/auto_persona/static/media/selfPickup.6cceafaf.jpg",
+    "static/media/star.svg": "/auto_persona/static/media/star.44d7b1b9.svg",
+    "static/media/telegram.svg": "/auto_persona/static/media/telegram.8dcb7520.svg",
+    "static/media/ukrPost.jpg": "/auto_persona/static/media/ukrPost.38acc09a.jpg",
+    "static/media/viber.svg": "/auto_persona/static/media/viber.5e24fa66.svg",
+    "static/media/whatsApp.svg": "/auto_persona/static/media/whatsApp.d868ced1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ae20f3b.js",
+    "static/js/2.6c09c56f.chunk.js",
+    "static/css/main.0d46e876.chunk.css",
+    "static/js/main.47a70f7f.chunk.js"
+  ]
+}
