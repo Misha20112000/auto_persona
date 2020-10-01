@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2202968d631662773cfe66f201da4041",
+    "revision": "90345e47897a701ac4246da604b49551",
     "url": "/auto_persona/index.html"
   },
   {
-    "revision": "4751da91b27836a9ea4f",
-    "url": "/auto_persona/static/css/main.0d46e876.chunk.css"
+    "revision": "0e1e409aa22eb9e6e409",
+    "url": "/auto_persona/static/css/main.aefbc1d3.chunk.css"
   },
   {
-    "revision": "db02820e6affb35c3d4d",
-    "url": "/auto_persona/static/js/2.9bb55f44.chunk.js"
+    "revision": "86588232ac173a34fc2d",
+    "url": "/auto_persona/static/js/2.de7860da.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/auto_persona/static/js/2.9bb55f44.chunk.js.LICENSE.txt"
+    "url": "/auto_persona/static/js/2.de7860da.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4751da91b27836a9ea4f",
-    "url": "/auto_persona/static/js/main.619b3956.chunk.js"
+    "revision": "0e1e409aa22eb9e6e409",
+    "url": "/auto_persona/static/js/main.7207ab51.chunk.js"
   },
   {
     "revision": "da96d48c466bf2bfef05",
